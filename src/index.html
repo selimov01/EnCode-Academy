@@ -3,134 +3,182 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EnCode Academy — Инженерная экосистема обучения</title>
-        <meta name="description" content="Обучение на стыке IT и инженерии: интерактивные роадмапы, AI-тьютор и реальные проекты.">
+        <title>EnCode Academy — Синтез кода и систем</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
         <link rel="stylesheet" href="style.css">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+        <script>
+            tailwind.config = {
+                "theme": {
+                    "extend": {
+                        "colors": {
+                            'tech-dark': '#0B0E14',
+                            'tech-panel': '#161B22',
+                            'tech-border': '#1E232D',
+                            'it-cyan': '#00F0FF',
+                            'eng-orange': '#FF8C00',
+                            'math-purple': '#A855F7',
+                        },
+                        "fontFamily": {
+                            "sans": ['Inter', 'sans-serif'],
+                            "mono": ['JetBrains Mono', 'monospace'],
+                        },
+                    }
+                }
+            }
+        </script>
     </head>
     <body>
-        <header class="main-header">
-            <div class="container header-layout">
 
-                <nav class="header-nav">
-                    <ul>
-                        <li><a href="#about">О проекте</a></li>
-                        <li><a href="#catalog">Каталог</a></li>
-                        <li><a href="/community">Сообщество</a></li>
-                    </ul>
-                </nav>
+    <header class="main-header">
+        <div class="container header-layout">
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#about">О проекте</a></li>
+                    <li><a href="#catalog">Каталог</a></li>
+                    <li><a href="/community">Сообщество</a></li>
+                </ul>
+            </nav>
 
-                <div class="header-search">
-                    <form action="/search" method="GET" role="search">
-                        <label for="site-search" class="visually-hidden">Поиск по роадмапам и навыкам</label>
-                        <input type="search" id="site-search" name="q" placeholder="Найти роадмап или технологию...">
-                        <kbd>Ctrl + K</kbd>
-                    </form>
-                </div>
-
-                <div class="header-user">
-                    <a href="/profile" class="btn-profile">Личный кабинет</a>
-                </div>
-
+            <div class="header-search">
+                <form action="/search" method="GET" role="search">
+                    <label for="site-search" class="visually-hidden">Поиск по курсам и технологиям</label>
+                    <input type="search" id="site-search" name="q" placeholder="Найти роадмап, стек или дисциплину...">
+                    <kbd>Ctrl + K</kbd>
+                </form>
             </div>
-        </header>
 
-        <main>
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>EnCode Academy</h1>
-                        <p class="hero-subtitle">Инженерная экосистема: от проектирования плат до разработки на ROS. Обучение на стыке Software и Hardware.</p>
-                        <div class="hero-actions">
-                            <a href="#catalog" class="btn-primary">Перейти к каталогу</a>
+            <div class="header-user">
+                <a href="/profile" class="btn-profile">Личный кабинет</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>EnCode Academy</h1>
+                    <p class="hero-subtitle">
+                        Экосистема для разработчиков и инженеров.
+                        Проектируем сложные серверные решения и создаем интеллектуальные системы обработки сигналов.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#catalog" class="btn-primary">Открыть каталог направлений</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="features-section">
+            <div class="container">
+                <h2 class="section-title">О проекте</h2>
+                <div class="features-grid">
+                    <article class="feature-item">
+                        <h3>Full-Stack подход</h3>
+                        <p>Мы объединяем разработку масштабируемого софта с глубоким пониманием физики процессов и архитектуры систем.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3>Интерактивные Роадмапы</h3>
+                        <p>Визуальный граф компетенций, связывающий алгоритмическую базу с прикладным инженерным проектированием.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3>AI-аналитика и Тьютор</h3>
+                        <p>Нейросетевой наставник для проверки чистоты кода, оптимизации баз данных и анализа сигнальных цепей.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3>Профессиональный профиль</h3>
+                        <p>Ваше портфолио включает как архитектурные ИТ-проекты, так и расчеты сложных технических систем.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog-section">
+            <div class="container">
+                <h2 class="section-title">Каталог направлений</h2>
+
+                <div class="catalog-filters">
+                    <button class="filter-tag active">Все</button>
+                    <button class="filter-tag">#Software</button>
+                    <button class="filter-tag">#Data_Math</button>
+                    <button class="filter-tag">#Engineering</button>
+                </div>
+
+                <div class="catalog-grid">
+                    <article class="course-card">
+                        <div class="card-type it">Software Engineering</div>
+                        <h3>Backend разработка</h3>
+                        <p>Высоконагруженные системы, микросервисная архитектура и проектирование сложных БД.</p>
+                        <div class="card-meta">
+                            <span>160 часов</span>
+                            <span>Сложность: Pro</span>
                         </div>
-                    </div>
-                </div>
-            </section>
+                        <a href="/backend" class="card-link">Изучить путь →</a>
+                    </article>
 
-            <section id="about" class="features-section">
-                <div class="container">
-                    <h2 class="section-title">О проекте</h2>
-                    <div class="features-grid">
-                        <article class="feature-item">
-                            <h3>Интерактивные Роадмапы</h3>
-                            <p>Визуализация обучения как графа компетенций. Вы всегда видите свою траекторию развития.</p>
-                        </article>
-                        <article class="feature-item">
-                            <h3>Hardware + Software</h3>
-                            <p>Единство теории цепей и написания кода. Мы учим создавать законченные устройства.</p>
-                        </article>
-                        <article class="feature-item">
-                            <h3>AI-тьютор</h3>
-                            <p>Нейросеть-наставник проверит ваш код и даст рекомендации по схемотехнике 24/7.</p>
-                        </article>
-                        <article class="feature-item">
-                            <h3>Digital Profile</h3>
-                            <p>Ваш прогресс — это верифицированное портфолио, готовое к отправке работодателю.</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
+                    <article class="course-card">
+                        <div class="card-type math">Data Science</div>
+                        <h3>Data Science</h3>
+                        <p>Машинное обучение, статистический анализ и построение предиктивных моделей для бизнеса и ИИ.</p>
+                        <div class="card-meta">
+                            <span>180 часов</span>
+                            <span>Сложность: Mid</span>
+                        </div>
+                        <a href="/ds" class="card-link">Изучить путь →</a>
+                    </article>
 
-            <section id="catalog" class="catalog-section">
-                <div class="container">
-                    <h2 class="section-title">Каталог роадмапов</h2>
-
-                    <div class="catalog-filters">
-                        <button class="filter-tag active">Все</button>
-                        <button class="filter-tag">#Robotics</button>
-                        <button class="filter-tag">#Embedded</button>
-                        <button class="filter-tag">#IoT</button>
-                    </div>
-
-                    <div class="catalog-grid">
-                        <article class="course-card">
-                            <div class="card-type">Engineering</div>
-                            <h3>Робототехника: старт</h3>
-                            <p>Основы конструирования и программирования автономных систем.</p>
-                            <div class="card-meta">
-                                <span>120 часов</span>
-                                <span>Сложность: Mid</span>
-                            </div>
-                            <a href="/course-id" class="card-link">Открыть карту</a>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section class="community-section">
-                <div class="container community-box">
-                    <h2>Присоединяйся к комьюнити</h2>
-                    <p>Обменивайся опытом, находи единомышленников и работай над проектами вместе с другими студентами.</p>
-                    <div class="community-stats">
-                        <strong>1500+ участников</strong>
-                        <span>42 активных проекта</span>
-                    </div>
-                    <a href="/discord" class="btn-secondary">Вступить в сообщество</a>
-                </div>
-            </section>
-        </main>
-
-        <footer class="main-footer">
-            <div class="container footer-layout">
-                <div class="footer-brand">
-                    <span class="logo">EnCode</span>
-                    <p>Build the future, code the hardware.</p>
-                </div>
-                <nav class="footer-links">
-                    <ul>
-                        <li><a href="/docs">Документация</a></li>
-                        <li><a href="/support">Поддержка</a></li>
-                        <li><a href="/privacy">Конфиденциальность</a></li>
-                    </ul>
-                </nav>
-                <div class="footer-tech-info">
-                    <p>Status: <span class="status-ok">All systems operational</span></p>
-                    <p>Build version: 1.0.5_Stable</p>
+                    <article class="course-card">
+                        <div class="card-type eng">Digital Signals</div>
+                        <h3>ЦОС (Цифровая обработка сигналов)</h3>
+                        <p>Математическая фильтрация, спектральный анализ и реализация алгоритмов на сигнальных процессорах.</p>
+                        <div class="card-meta">
+                            <span>140 часов</span>
+                            <span>Сложность: Pro</span>
+                        </div>
+                        <a href="/dsp" class="card-link">Изучить путь →</a>
+                    </article>
                 </div>
             </div>
-        </footer>
+        </section>
+
+        <section class="community-section">
+            <div class="container community-box">
+                <h2>Интеллектуальное комьюнити</h2>
+                <p>Место встречи Backend-разработчиков, Data-сайентистов и инженеров-разработчиков систем ЦОС.</p>
+                <div class="community-stats">
+                    <strong>2500+ участников</strong>
+                    <span>Активные обсуждения 24/7</span>
+                </div>
+                <a href="/community" class="btn-secondary">Присоединиться к общению</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-layout">
+            <div class="footer-brand">
+                <span class="logo">EnCode</span>
+                <p>Единство алгоритмов и физических систем.</p>
+            </div>
+            <nav class="footer-links">
+                <ul>
+                    <li><a href="/docs">База знаний</a></li>
+                    <li><a href="/support">Техподдержка</a></li>
+                </ul>
+            </nav>
+            <div class="footer-tech-info">
+                <p>Core: <span class="status-ok">Active</span></p>
+                <p>Version: 1.0.5_Stable</p>
+            </div>
+        </div>
+    </footer>
+
     </body>
 </html>
