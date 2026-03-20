@@ -15,7 +15,7 @@
 
 Отсканируйте QR-код, чтобы открыть сайт на смартфоне:
 
-<img src="assets/QR.png" width="150" alt="QR-код на сайт">
+<img src="assets/qr-code.png" width="150" alt="QR-код на сайт">
 
 ---
 
