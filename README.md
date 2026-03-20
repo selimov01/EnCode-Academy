@@ -11,7 +11,7 @@
 
 ### 🌐 Live Preview
 Проект развернут и доступен для ознакомления в реальном времени:  
-🚀 **[EnCode Academy](https://selimov01.github.io/EnCode-Academy/src)**
+🚀 **[EnCode Academy](https://selimov01.github.io/EnCode-Academy)**
 
 Отсканируйте QR-код, чтобы открыть сайт на смартфоне:
 
