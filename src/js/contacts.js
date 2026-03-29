@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-link').forEach(link => {
         const hrefPage = link.getAttribute('href');
 
-        if (hrefPage === currentPage || (hrefPage === "index.html" && currentPage === "")) {
+        if (hrefPage === currentPage || (hrefPage === "contacts.html" && currentPage === "")) {
             link.classList.add('text-gray-500', 'cursor-default');
             link.removeAttribute('href');
         }

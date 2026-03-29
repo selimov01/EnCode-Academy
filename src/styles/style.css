@@ -155,26 +155,6 @@ h1, h2, h3, .font-mono {
     font-family: var(--font-mono), serif;
 }
 
-.btn-profile {
-    background: transparent;
-    color: var(--it-cyan);
-    border: 1px solid var(--it-cyan);
-    padding: 8px 20px;
-    border-radius: 4px;
-    font-family: var(--font-mono), serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.btn-profile:hover {
-    background: var(--it-cyan);
-    color: var(--bg-dark);
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
-}
-
 /* --- Hero and buttons --- */
 .hero {
     padding: 140px 0 80px;

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EnCode Academy — Синтез кода и систем</title>
 
+        <script src="src/js/tailwind-config.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
 
         <link rel="stylesheet" href="src/styles/style.css">
@@ -12,27 +13,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-
-        <script>
-            tailwind.config = {
-                "theme": {
-                    "extend": {
-                        "colors": {
-                            'tech-dark': '#0B0E14',
-                            'tech-panel': '#161B22',
-                            'tech-border': '#1E232D',
-                            'it-cyan': '#00F0FF',
-                            'eng-orange': '#FF8C00',
-                            'math-purple': '#A855F7',
-                        },
-                        "fontFamily": {
-                            "sans": ['Inter', 'sans-serif'],
-                            "mono": ['JetBrains Mono', 'monospace'],
-                        },
-                    }
-                }
-            }
-        </script>
     </head>
     <body class="bg-blueprint flex flex-col min-h-screen">
 
@@ -40,14 +20,14 @@
             <div class="container header-layout flex items-center justify-between py-4">
                 <nav class="header-nav">
                     <ul class="flex gap-6">
-                        <li><a href="/index.html" class="hover:text-it-cyan transition">Главная</a></li>
-                        <li><a href="/src/contacts.html" class="hover:text-it-cyan transition">Контакты</a></li>
-                        <li><a href="/src/faq.html" class="hover:text-it-cyan transition">FAQ</a></li>
+                        <li><a href="index.html" class="hover:text-it-cyan transition">Главная</a></li>
+                        <li><a href="src/contacts.html" class="hover:text-it-cyan transition">Контакты</a></li>
+                        <li><a href="src/faq.html" class="hover:text-it-cyan transition">FAQ</a></li>
                     </ul>
                 </nav>
 
                 <div class="header-user">
-                    <a href="/profile" class="btn-profile px-3 py-1 border border-it-cyan rounded font-mono hover:bg-it-cyan hover:text-black transition">
+                    <a href="src/profile.html" class="btn-profile px-3 py-1 border border-it-cyan rounded font-mono hover:bg-it-cyan hover:text-black transition">
                         Личный кабинет
                     </a>
                 </div>
