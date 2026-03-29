@@ -1,4 +1,3 @@
-// Инициализация иконок
 lucide.createIcons();
 
 // Copy-to-clipboard
