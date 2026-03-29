@@ -1,0 +1,38 @@
+/* --- glow buttons --- */
+.glow-cyan:hover {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4),
+    0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.glow-purple:hover {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.4),
+    0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+/* --- tooltip --- */
+.tooltip {
+    position: relative;
+}
+
+.tooltip-text {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0B0E14;
+    color: #E6EDF3;
+    padding: 6px 10px;
+    font-size: 11px;
+    border: 1px solid rgba(30, 35, 45, 0.8);
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+    font-family: var(--font-mono), serif;
+}
+
+.tooltip:hover .tooltip-text {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-2px);
+}

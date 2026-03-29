@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Контакты — EnCode Academy</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/contacts.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body class="bg-blueprint flex flex-col min-h-screen">
+
+    <header class="main-header">
+        <div class="container header-layout">
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="/index.html#about">О проекте</a></li>
+                    <li><a href="/index.html#catalog">Каталог</a></li>
+                    <li><a href="./contacts.html">Контакты</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-user">
+                <a href="/profile" class="btn-profile">Личный кабинет</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 pt-[120px] pb-20">
+        <section class="container">
+            <h1 class="section-title text-center">Контактная информация</h1>
+
+            <div class="max-w-3xl mx-auto mt-10">
+                <div class="bg-tech-panel border border-tech-border rounded-2xl p-10 backdrop-blur-md">
+
+                    <!-- Address -->
+                    <div class="mb-8">
+                        <p class="text-sm text-gray-400 font-mono mb-2">[ LOCATION ]</p>
+                        <p class="text-lg text-white">
+                            г. Москва, проспект Вернадского, д.78
+                        </p>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="mb-8 flex items-start gap-4">
+                        <i data-lucide="phone" class="text-it-cyan"></i>
+
+                        <div class="flex items-center gap-4">
+                            <span id="phone" class="text-lg text-it-cyan font-mono">
+                                +7 (499)-123-45-67
+                            </span>
+
+                            <button onclick="copyText('phone', this)"
+                                    class="text-xs font-mono px-3 py-1 border border-tech-border rounded hover:border-it-cyan hover:text-it-cyan transition">
+                                copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-8">
+                        <p class="text-sm text-gray-400 font-mono mb-2">[ EMAIL ]</p>
+                        <a href="mailto:selimov@mirea.ru" class="text-lg text-white hover:text-it-cyan transition">
+                            selimov@mirea.ru
+                        </a>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="share-2" class="text-it-cyan"></i>
+
+                        <div>
+                            <p class="text-sm text-gray-400 font-mono mb-4">[ SOCIAL NETWORKS ]</p>
+
+                            <div class="flex gap-4 flex-wrap">
+
+                                <!-- Telegram -->
+                                <a href="https://t.me/selimov012" target="_blank"
+                                   class="flex items-center gap-2 px-5 py-2 border border-it-cyan text-it-cyan rounded-md font-mono text-sm hover:bg-it-cyan hover:text-black transition">
+                                    <i data-lucide="send"></i>
+                                    Telegram
+                                </a>
+
+                                <!-- VK -->
+                                <a href="https://vk.com/selimov012" target="_blank"
+                                   class="flex items-center gap-2 px-5 py-2 border border-math-purple text-math-purple rounded-md font-mono text-sm hover:bg-math-purple hover:text-black transition">
+                                    <i data-lucide="users"></i>
+                                    VK
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-layout">
+            <div class="footer-brand">
+                <span class="logo">EnCode</span>
+                <p>Единство алгоритмов и физических систем</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/main.js"></script>
+    </body>
+</html>
