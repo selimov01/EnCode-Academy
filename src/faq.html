@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ — EnCode Academy</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/faq.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-blueprint flex flex-col min-h-screen font-sans">
+
+        <header class="main-header">
+            <div class="container header-layout">
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="/index.html#about">О проекте</a></li>
+                        <li><a href="/index.html#catalog">Каталог</a></li>
+                        <li><a href="./contacts.html">Контакты</a></li>
+                        <li><a href="./faq.html">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-user">
+                    <a href="/profile" class="btn-profile">Личный кабинет</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 pt-[120px] pb-20">
+            <section class="container max-w-3xl mx-auto">
+                <h1 class="section-title text-center text-it-cyan">Часто задаваемые вопросы</h1>
+
+                <div class="mt-10 space-y-4">
+
+                    <!-- Item 1 -->
+                    <div class="faq-item bg-tech-panel border border-tech-border rounded-2xl p-6 hover:border-it-cyan hover:shadow-neon transition">
+                        <div class="faq-question flex justify-between items-center" onclick="toggleFaq(this)">
+                            <span class="text-it-cyan font-mono font-semibold text-lg hover:text-cyan-400 transition">Для чего эта платформа?</span>
+                            <span class="icon text-it-cyan text-xl font-bold">+</span>
+                        </div>
+                        <div class="faq-answer text-gray-200 mt-2 font-sans text-base leading-relaxed">
+                            EnCode Academy - образовательная платформа для тех, кто хочет изучить технические профильные направления с упором на взаимодействие. Вы сможете изучить программирование и понять, как оно используется в инженерии. Интересно, правда?
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="faq-item bg-tech-panel border border-tech-border rounded-2xl p-6 hover:border-it-cyan hover:shadow-neon transition">
+                        <div class="faq-question flex justify-between items-center" onclick="toggleFaq(this)">
+                            <span class="text-it-cyan font-mono font-semibold text-lg hover:text-cyan-400 transition">А как мне понять, что я всё делаю правильно?</span>
+                            <span class="icon text-it-cyan text-xl font-bold">+</span>
+                        </div>
+                        <div class="faq-answer text-gray-200 mt-2 font-sans text-base leading-relaxed">
+                            На платформе есть ИИ-тренер и progress-bar, которые помогут вам в отслеживании своего прогресса.
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="faq-item bg-tech-panel border border-tech-border rounded-2xl p-6 hover:border-it-cyan hover:shadow-neon transition">
+                        <div class="faq-question flex justify-between items-center" onclick="toggleFaq(this)">
+                            <span class="text-it-cyan font-mono font-semibold text-lg hover:text-cyan-400 transition">Некоторые материалы из роадмапа я уже знаю. Могу ли я их пропустить?</span>
+                            <span class="icon text-it-cyan text-xl font-bold">+</span>
+                        </div>
+                        <div class="faq-answer text-gray-200 mt-2 font-sans text-base leading-relaxed">
+                            Да, можете. В платформу интегрирован ИИ-тренер, который позволит подобрать индивидуальный план обучения, подходящий вам по уровню подготовки и желания углубиться в тематику направления.
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="faq-item bg-tech-panel border border-tech-border rounded-2xl p-6 hover:border-it-cyan hover:shadow-neon transition">
+                        <div class="faq-question flex justify-between items-center" onclick="toggleFaq(this)">
+                            <span class="text-it-cyan font-mono font-semibold text-lg hover:text-cyan-400 transition">Обучение это круто, но хочется и с людьми посоветоваться. Как это можно сделать?</span>
+                            <span class="icon text-it-cyan text-xl font-bold">+</span>
+                        </div>
+                        <div class="faq-answer text-gray-200 mt-2 font-sans text-base leading-relaxed">
+                            Вы в любой момент можете присоединиться к сообществу Академии, в котором находятся другие участники наших курсов. В сообществе вы всегда найдете как разработчиков курсов, так и ваших "сокурсников", с которыми можно обменяться опытом.
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="faq-item bg-tech-panel border border-tech-border rounded-2xl p-6 hover:border-it-cyan hover:shadow-neon transition">
+                        <div class="faq-question flex justify-between items-center" onclick="toggleFaq(this)">
+                            <span class="text-it-cyan font-mono font-semibold text-lg hover:text-cyan-400 transition">А это бесплатно?</span>
+                            <span class="icon text-it-cyan text-xl font-bold">+</span>
+                        </div>
+                        <div class="faq-answer text-gray-200 mt-2 font-sans text-base leading-relaxed">
+                            Базовый функционал платформы, включающий в себя членство в сообществе и использование роадмапов, является полностью бесплатным без ограничений. Продвинутый функционал (ИИ-тренер, видеокурсы) предоставляются по ежемесячной подписке.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container footer-layout">
+                <div class="footer-brand">
+                    <span class="logo">EnCode</span>
+                    <p>Единство алгоритмов и физических систем.</p>
+                </div>
+                <nav class="footer-links">
+                    <ul>
+                        <li><a href="/docs">База знаний</a></li>
+                        <li><a href="/support">Техподдержка</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-tech-info">
+                    <p>Core: <span class="status-ok">Active</span></p>
+                    <p>Version: 1.0.5_Stable</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./js/faq.js"></script>
+    </body>
+</html>

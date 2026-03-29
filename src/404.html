@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Страница не найдена | EnCode Academy</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="bg-tech-dark text-white flex flex-col min-h-screen">
+    <header class="main-header">
+      <div class="container header-layout flex items-center justify-between py-4">
+
+        <nav class="header-nav">
+
+          <ul class="flex gap-6">
+            <li><a href="/index.html#about" class="hover:text-it-cyan transition">О проекте</a></li>
+            <li><a href="/index.html#catalog" class="hover:text-it-cyan transition">Каталог</a></li>
+            <li><a href="/src/contacts.html" class="hover:text-it-cyan transition">Контакты</a></li>
+            <li><a href="/src/faq.html" class="hover:text-it-cyan transition">FAQ</a></li>
+          </ul>
+
+        </nav>
+
+        <div class="header-user">
+          <a href="/profile" class="btn-profile px-3 py-1 border border-it-cyan rounded font-mono hover:bg-it-cyan hover:text-black transition">
+            Личный кабинет
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <main class="flex-1 flex flex-col items-center justify-center text-center px-4 pt-[120px]">
+      <h1 class="text-[10rem] font-mono text-it-cyan drop-shadow-[0_0_15px_#00F0FF]">404</h1>
+      <h2 class="text-3xl md:text-5xl font-sans mt-4 mb-6">Страница не найдена</h2>
+      <p class="text-gray-400 mb-8 max-w-md">
+        Возможно, ссылка устарела или вы ошиблись в адресе. Не переживайте, вернем вас обратно на безопасную землю
+      </p>
+      <a href="/index.html" class="px-8 py-3 bg-it-cyan text-black font-mono rounded-lg hover:bg-white hover:text-it-cyan transition shadow-lg hover:shadow-it-cyan/50">
+        Вернуться на главную
+      </a>
+    </main>
+
+    <footer class="main-footer mt-auto">
+      <div class="container footer-layout">
+
+        <div class="footer-brand">
+          <span class="logo">EnCode</span>
+          <p>Единство алгоритмов и физических систем.</p>
+        </div>
+
+        <nav class="footer-links">
+          <ul>
+            <li><a href="/docs">База знаний</a></li>
+            <li><a href="/support">Техподдержка</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-tech-info">
+          <p>Core: <span class="status-ok">Active</span></p>
+          <p>Version: 1.0.5_Stable</p>
+        </div>
+
+      </div>
+    </footer>
+  </body>
+</html>
