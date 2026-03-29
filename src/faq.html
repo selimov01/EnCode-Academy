@@ -16,18 +16,19 @@
     <body class="bg-blueprint flex flex-col min-h-screen font-sans">
 
         <header class="main-header">
-            <div class="container header-layout">
+            <div class="container header-layout flex items-center justify-between py-4">
                 <nav class="header-nav">
-                    <ul>
-                        <li><a href="/index.html#about">О проекте</a></li>
-                        <li><a href="/index.html#catalog">Каталог</a></li>
-                        <li><a href="./contacts.html">Контакты</a></li>
-                        <li><a href="./faq.html">FAQ</a></li>
+                    <ul class="flex gap-6">
+                        <li><a href="/index.html" class="hover:text-it-cyan transition">Главная</a></li>
+                        <li><a href="/src/contacts.html" class="hover:text-it-cyan transition">Контакты</a></li>
+                        <li><a href="/src/faq.html" class="hover:text-it-cyan transition">FAQ</a></li>
                     </ul>
                 </nav>
 
                 <div class="header-user">
-                    <a href="/profile" class="btn-profile">Личный кабинет</a>
+                    <a href="/profile" class="btn-profile px-3 py-1 border border-it-cyan rounded font-mono hover:bg-it-cyan hover:text-black transition">
+                        Личный кабинет
+                    </a>
                 </div>
             </div>
         </header>
