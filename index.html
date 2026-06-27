@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EnCode Academy — Синтез кода и систем</title>
 
-        <script src="src/js/tailwind-config.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="src/js/tailwind-config.js"></script>
 
         <link rel="stylesheet" href="src/styles/style.css">
 
@@ -94,7 +94,7 @@
                                 <span>160 часов</span>
                                 <span>Сложность: Pro</span>
                             </div>
-                            <a href="/backend" class="card-link">Изучить путь →</a>
+                            <button type="button" class="course-action-btn" data-course-id="backend" onclick="handleCourseAction('backend', this)">Изучить путь</button>
                         </article>
 
                         <article class="course-card">
@@ -105,7 +105,7 @@
                                 <span>180 часов</span>
                                 <span>Сложность: Mid</span>
                             </div>
-                            <a href="/ds" class="card-link">Изучить путь →</a>
+                            <button type="button" class="course-action-btn" data-course-id="datascience" onclick="handleCourseAction('datascience', this)">Изучить путь</button>
                         </article>
 
                         <article class="course-card">
@@ -116,7 +116,7 @@
                                 <span>140 часов</span>
                                 <span>Сложность: Pro</span>
                             </div>
-                            <a href="/dsp" class="card-link">Изучить путь →</a>
+                            <button type="button" class="course-action-btn" data-course-id="dsp" onclick="handleCourseAction('dsp', this)">Изучить путь</button>
                         </article>
                     </div>
                 </div>
@@ -149,11 +149,11 @@
                 </nav>
                 <div class="footer-tech-info">
                     <p>Core: <span class="status-ok">Active</span></p>
-                    <p>Version: 1.0.5_Stable</p>
+                    <p>Version: 0.10.3_Dev</p>
                 </div>
             </div>
         </footer>
         <script src="https://unpkg.com/lucide@latest"></script>
-        <script src="src/js/main.js"></script>
+        <script src="src/js/main.js?v=2" defer></script>
     </body>
 </html>

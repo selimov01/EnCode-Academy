@@ -1,10 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Личный кабинет — EnCode Academy</title>
 
-</body>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="js/tailwind-config.js"></script>
+        <link rel="stylesheet" href="./styles/style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-blueprint flex flex-col min-h-screen">
+
+        <header class="main-header">
+            <div class="container header-layout flex items-center justify-between py-4">
+                <nav class="header-nav">
+                    <ul class="flex gap-6">
+                        <li><a href="../index.html" class="hover:text-it-cyan transition">Главная</a></li>
+                        <li><a href="contacts.html" class="hover:text-it-cyan transition">Контакты</a></li>
+                        <li><a href="faq.html" class="hover:text-it-cyan transition">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-user">
+                    <a href="profile.html" class="btn-profile px-3 py-1 border border-it-cyan rounded font-mono hover:bg-it-cyan hover:text-black transition">
+                        Личный кабинет
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 pt-[120px] pb-20">
+            <section class="container">
+                <div class="profile-hero">
+                    <div>
+                        <p class="profile-kicker">[ PROFILE / DASHBOARD ]</p>
+                        <h1 class="section-title mb-4">Личный кабинет</h1>
+                        <p id="profile-hero-text" class="text-gray-400 max-w-2xl">
+                            Войдите в аккаунт или зарегистрируйтесь, чтобы увидеть ваши данные, интересы и прогресс по курсам.
+                        </p>
+                    </div>
+                    <div class="profile-hero-badge">
+                        <span class="profile-hero-badge__label">Текущий уровень</span>
+                        <strong>Intermediate</strong>
+                    </div>
+                </div>
+
+                <div id="auth-panel" class="auth-shell">
+                    <div class="auth-card">
+                        <div class="auth-mode-switcher">
+                            <button type="button" class="auth-mode-btn is-active" data-mode="login">Войти</button>
+                            <button type="button" class="auth-mode-btn" data-mode="register">Зарегистрироваться</button>
+                        </div>
+
+                        <div id="auth-error" class="auth-error hidden"></div>
+
+                        <form id="login-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="login-identifier">Email или никнейм</label>
+                                <input id="login-identifier" name="identifier" type="text" placeholder="Введите email или username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Пароль</label>
+                                <input id="login-password" name="password" type="password" placeholder="Введите пароль" required>
+                            </div>
+                            <button type="submit" class="btn-primary w-full justify-center">Войти</button>
+                        </form>
+
+                        <form id="register-form" class="auth-form hidden">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="register-name">ФИО</label>
+                                    <input id="register-name" name="full_name" type="text" placeholder="Иванов Иван Иванович" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-username">Никнейм</label>
+                                    <input id="register-username" name="username" type="text" placeholder="ivan_dev" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-email">Email</label>
+                                <input id="register-email" name="email" type="email" placeholder="ivan@example.com" required>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Интересы</label>
+                                    <div class="interest-options" role="group" aria-label="Выбор интересов">
+                                        <button type="button" class="interest-option" data-interest="Data Science">Data Science</button>
+                                        <button type="button" class="interest-option" data-interest="Backend">Backend</button>
+                                        <button type="button" class="interest-option" data-interest="Frontend">Frontend</button>
+                                        <button type="button" class="interest-option" data-interest="DevOps">DevOps</button>
+                                        <button type="button" class="interest-option" data-interest="Machine Learning">Machine Learning</button>
+                                        <button type="button" class="interest-option" data-interest="Embeded">Embeded</button>
+                                    </div>
+                                    <input type="hidden" id="register-interests" name="interests" value="">
+                                </div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="register-password">Пароль</label>
+                                    <input id="register-password" name="password" type="password" placeholder="Минимум 6 символов" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-confirm">Подтверждение пароля</label>
+                                    <input id="register-confirm" name="confirm_password" type="password" placeholder="Повторите пароль" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary w-full justify-center">Создать аккаунт</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="profile-panel" class="profile-grid hidden">
+                    <aside class="profile-card profile-summary">
+                        <div class="avatar-wrapper">
+                            <div id="profile-avatar" class="avatar">AS</div>
+                            <button id="change-photo-btn" type="button" class="btn-photo-overlay" aria-label="Изменить фото профиля">
+                                ✎
+                            </button>
+                            <input id="profile-photo-input" type="file" accept="image/*" class="hidden">
+                        </div>
+                        <div class="profile-summary__body">
+                            <div class="profile-summary__top">
+                                <div>
+                                    <h2 id="profile-name">Пользователь</h2>
+                                    <p id="profile-username" class="profile-username">@user</p>
+                                    <p id="profile-email" class="profile-email">email@example.com</p>
+                                </div>
+                                <button id="logout-btn" type="button" class="logout-btn">Выйти</button>
+                            </div>
+
+                            <div id="profile-tags" class="profile-tags"></div>
+                        </div>
+                    </aside>
+
+                    <section class="profile-card profile-courses">
+                        <div class="section-header">
+                            <div>
+                                <p class="profile-kicker">[ TRACKED COURSES ]</p>
+                                <h2>Изучаемые курсы</h2>
+                            </div>
+                            <span class="course-count" id="course-count">0 в работе</span>
+                        </div>
+
+                        <div id="courses-list" class="course-list"></div>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container footer-layout">
+                <div class="footer-brand">
+                    <span class="logo">EnCode</span>
+                    <p>Единство алгоритмов и физических систем</p>
+                </div>
+                <nav class="footer-links">
+                    <ul>
+                        <li><a href="faq.html">База знаний</a></li>
+                        <li><a href="contacts.html">Техподдержка</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-tech-info">
+                    <p>Core: <span class="status-ok">Active</span></p>
+                    <p>Version: 0.10.3_Dev</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script src="js/main.js"></script>
+        <script src="js/profile.js"></script>
+    </body>
 </html>
