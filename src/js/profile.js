@@ -1,5 +1,5 @@
 const AUTH_TOKEN_KEY = 'encodeAuthToken';
-const API_BASE = 'http://127.0.0.1:8002';
+const API_BASE = '';
 const savedCoursesKey = 'savedCourses';
 const profilePhotoKey = 'profilePhoto';
 
@@ -135,7 +135,7 @@ function renderSavedCourses() {
             <div class="empty-saved-courses">
                 <p>У вас ещё нет сохранённых курсов.</p>
                 <p>Сохраните курс на главной странице, чтобы он появился здесь.</p>
-                <a href="../index.html#catalog" class="btn-primary empty-cta">Выбрать курс</a>
+                <a href="/#catalog" class="btn-primary empty-cta">Выбрать курс</a>
             </div>
         `;
         return;
@@ -158,7 +158,7 @@ function renderSavedCourses() {
             </div>
             <div class="course-footer">
                 <span>${course.next}</span>
-                <a href="#" class="card-link">Продолжить →</a>
+                <a href="/backend-roadmap" class="card-link" style="display: ${course.id === 'backend' ? 'inline-flex' : 'none'};">Продолжить →</a>
             </div>
         </article>
     `).join('');
@@ -418,4 +418,3 @@ document.addEventListener('DOMContentLoaded', () => {
     loadProfilePhoto();
     loadProfile();
 });
-
