@@ -4,8 +4,14 @@ import uuid
 from datetime import datetime, timezone
 from typing import Any
 
+from pathlib import Path
+
 import bcrypt
-from fastapi import FastAPI, Header, HTTPException
+from fastapi import FastAPI, Header, Request
+from fastapi.exceptions import HTTPException
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from starlette.exceptions import HTTPException as StarletteHTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, field_validator
 
@@ -22,7 +28,54 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+BASE_DIR = Path(__file__).resolve().parent
 
+# static files
+app.mount("/static", StaticFiles(directory=BASE_DIR.parent.parent / "src"), name="static")
+
+# roadmap PDFs
+ROADMAPS_DIR = BASE_DIR.parent.parent / "assets" / "roadmaps"
+app.mount("/roadmaps", StaticFiles(directory=ROADMAPS_DIR), name="roadmaps")
+
+
+# html pages
+@app.get("/", response_class=HTMLResponse)
+async def index():
+    with open(BASE_DIR.parent.parent / "index.html", encoding="utf-8") as f:
+        return f.read()
+
+@app.get("/contacts", response_class=HTMLResponse)
+async def contacts():
+    with open(BASE_DIR.parent.parent / "src" / "contacts.html", encoding="utf-8") as f:
+        return f.read()
+
+@app.get("/faq", response_class=HTMLResponse)
+async def faq():
+    with open(BASE_DIR.parent.parent / "src" / "faq.html", encoding="utf-8") as f:
+        return f.read()
+
+@app.get("/profile", response_class=HTMLResponse)
+async def profile():
+    with open(BASE_DIR.parent.parent / "src" / "profile.html", encoding="utf-8") as f:
+        return f.read()
+
+@app.get("/backend-roadmap", response_class=HTMLResponse)
+async def backend_roadmap():
+    with open(BASE_DIR.parent.parent / "src" / "backend-roadmap.html", encoding="utf-8") as f:
+        return f.read()
+
+
+# 404 handler
+@app.exception_handler(StarletteHTTPException)
+async def not_found_handler(request: Request, exc: StarletteHTTPException):
+    if exc.status_code == 404:
+        with open(BASE_DIR.parent.parent / "src" / "404.html", encoding="utf-8") as f:
+            return HTMLResponse(content=f.read(), status_code=404)
+    from fastapi.responses import JSONResponse
+    return JSONResponse({"detail": exc.detail}, status_code=exc.status_code)
+
+
+# database
 def get_db() -> sqlite3.Connection:
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
